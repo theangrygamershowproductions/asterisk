@@ -154,3 +154,6 @@ jobs:
         run: |
           BUILDER_INSTANCE="${{ steps.buildx_env.outputs.value }}"
           [ "${BUILDER_INSTANCE}" != "" ] && docker buildx rm "${BUILDER_INSTANCE}"
+      - uses: actions/checkout@v3
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
