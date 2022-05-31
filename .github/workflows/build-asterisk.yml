@@ -21,5 +21,8 @@ jobs:
       - run: |
           set -x
           echo "Processing asterisk releases for v. ${{ matrix.releases }}.x"
+      - uses: actions/labeler@v4
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
 
 
